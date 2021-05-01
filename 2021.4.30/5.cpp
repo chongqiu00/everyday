@@ -1,4 +1,6 @@
-/*编写一个通用数组模块实现*/
+/*
+编写一个通用数组模块实现*/
+
 #include <iostream>
 
 template<class T>

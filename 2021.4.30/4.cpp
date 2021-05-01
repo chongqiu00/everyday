@@ -1,5 +1,8 @@
 /*实现一个自己的String类是一道考验C++基础知识的好题。
-至少要能实现以下：构造函数，析构函数，拷贝构造函数(copy constructor)，重载赋值操作符(copy assignment operator)，。
+至少要能实现以下：
+构造函数，析构函数；
+拷贝构造函数(copy constructor)；
+重载赋值操作符(copy assignment operator)。
 */
 
 #include <iostream>
@@ -16,13 +19,12 @@ class MyString
 
     //功能实现
     MyString* operator= (const MyString * str);//重载==
+    char& operator[] (unsigned int index); //重载[]
 
     char* find(char ch); //查找字串中的内容。
-    char* find(char* str); //查找字串中的字串。
 
-    //访问接口
-    int size(); //取得字串大小。
-    char* get_str(); //取得字串
+    //
+    friend std::ostream& operator<<(std::ostream& stream, const MyString& string);
 
     private:
     char *m_Array;
@@ -30,6 +32,11 @@ class MyString
 
 };
 
+std::ostream& operator<<(std::ostream& stream, const MyString& string)
+{
+    stream << string.m_Array;
+    return stream;
+}
 //释放堆区内存。
 MyString::~MyString()
 {
@@ -132,6 +139,12 @@ MyString* MyString::operator= (const MyString * str) //string str = str_2
     }
 }
 
+//重载[]
+char& MyString::operator[] (unsigned int index)
+{
+    return m_Array[index];
+}
+
 //查找字串中的内容。
 char* MyString::find(char ch)
 {
@@ -163,16 +176,7 @@ char* MyString::find(char ch)
     }
 }
 
-//取得字串大小。
-int MyString::size()
-{
-    return m_Size;
-} 
-//取得字串
-char* MyString::get_str()
-{
-    return m_Array;
-}
+
 
 
 int main(int argc, char* argv[])
