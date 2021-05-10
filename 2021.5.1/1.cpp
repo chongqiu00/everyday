@@ -11,7 +11,7 @@ class String
     public:
     String( const char* string)  //默认拷贝
     {
-         std::cout << "创建" << std::endl;
+        std::cout << "创建" << std::endl;
         m_Size = strlen(string);
         m_Buffer = new char[m_Size + 1];
         memcpy(m_Buffer, string, m_Size + 1);

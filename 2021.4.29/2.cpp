@@ -1,4 +1,6 @@
-/*虚函数*/
+/*
+虚函数
+*/
 #include <iostream>
 
 class Entity
@@ -12,7 +14,7 @@ class Player : public Entity
     private:
     std::string m_Name;
     public:
-    Play(const std::string& name)
+    Player(const std::string& name)
     : m_Name(name){}
     std::string GetName() override { return m_Name;} //其后加入override覆写关键字
 };

@@ -12,7 +12,7 @@ class Singleton
 
     static Singleton& Get()
     {
-        static Singleton instance;
+        static Singleton instance; //创建一个静态类。
         return instance;
     }
 
@@ -45,3 +45,10 @@ int main(int argc, char*argv[])
 
     return 0;
 }
+
+/*
+运行结果：
+zww0
+mmm12
+mmm12
+*/

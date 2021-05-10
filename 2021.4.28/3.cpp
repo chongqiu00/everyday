@@ -1,5 +1,6 @@
 #include <iostream>
 //引用混淆点
+
 int main()
 {
     int a = 3;
@@ -19,3 +20,7 @@ int main()
 
     return 0;
 }
+
+/*
+引用就是给一个变量起了一个别名。不会给引用申请一个内存空间的。
+*/

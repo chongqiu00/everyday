@@ -24,7 +24,7 @@ int main()
         std::cout << vertices[i] << std::endl;
     }
 
-    //for ( Vertex v : vertices ) //这样写会将v整 个复制
+    //for ( Vertex v : vertices ) //这样写会将v整 个复制 格式：for( 传入容器中的参数名 v : 容器名)
     for (const Vertex& v : vertices ) //传入引用就不会复制
     {
         std::cout << v << std::endl;
